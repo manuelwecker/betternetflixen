@@ -8,6 +8,7 @@ const Headline = styled.h1`
   letter-spacing: 5px;
   color: #ffffff;
   line-height: -30px;
+  flex-grow: 3;
   /* Hier wieder sichtbar stellen */
   /* display: none; */
 `;
