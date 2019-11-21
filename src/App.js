@@ -1,11 +1,12 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
+import Header from "./compontents/Header";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <header>Logo, Search, IconButton</header>
+      <Header />
       <main>Movies Output</main>
     </>
   );
