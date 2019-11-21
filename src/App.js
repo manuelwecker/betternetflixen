@@ -1,13 +1,17 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./compontents/Header";
+import { MovieList } from "./compontents/MovieList";
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <Header />
-      <main>Movies Output</main>
+      <main>
+        <MovieList />
+        Output
+      </main>
     </>
   );
 }
