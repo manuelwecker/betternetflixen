@@ -1,5 +1,4 @@
 import React from "react";
-// import styled from "@emotion";
 import GlobalStyles from "./GlobalStyles";
 
 function App() {
