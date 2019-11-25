@@ -1,7 +1,7 @@
 import React from "react";
 import { searchMovies } from "../api/movies";
 
-export function MovieList() {
+export function MovieList({ searchValue }) {
   const [movies, setMovies] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -9,7 +9,7 @@ export function MovieList() {
 
   async function refreshMovies() {
     setLoading(true);
-    const discoveredMovies = await searchMovies("james+bond");
+    const discoveredMovies = await searchMovies(searchValue);
     setLoading(false);
     setMovies(discoveredMovies);
   }

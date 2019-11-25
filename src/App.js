@@ -4,12 +4,13 @@ import Header from "./compontents/Header";
 import { MovieList } from "./compontents/MovieList";
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState("franz");
   return (
     <>
       <GlobalStyles />
       <Header />
       <main>
-        <MovieList />
+        <MovieList searchValue={searchValue} />
         Output
       </main>
     </>
