@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const Headline = styled.h1`
   text-decoration: none;
@@ -16,3 +17,7 @@ const Headline = styled.h1`
 export default function Logo({ text }) {
   return <Headline>{text}</Headline>;
 }
+
+Logo.propTypes = {
+  text: PropTypes.string.isRequired
+};
