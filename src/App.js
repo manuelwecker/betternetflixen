@@ -1,17 +1,22 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
-import Header from "./compontents/Header";
-import { MovieList } from "./compontents/MovieList";
+import MovieList from "./components/MovieList";
+import Header from "./components/Header";
+import NewMovieFunctional from "./components/NewMovie";
 
 function App() {
-  const [searchValue, setSearchValue] = React.useState("franz");
+  const [movieSearchValue, setMovieSearchValue] = React.useState("");
+
   return (
     <>
       <GlobalStyles />
-      <Header />
+      <Header
+        searchValue={movieSearchValue}
+        onSearchValueChange={searchValue => setMovieSearchValue(searchValue)}
+      />
       <main>
-        <MovieList searchValue={searchValue} />
-        Output
+        <MovieList searchValue={movieSearchValue} />
+        <NewMovieFunctional />
       </main>
     </>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Logo from "./Logo";
 import Search from "./Search";
 import Button from "./Button";
 
@@ -13,7 +12,7 @@ const AppBar = styled.header`
   margin: 0 0 10px 0;
 `;
 
-export default function Header() {
+export default function Header({ searchValue, onSearchValueChange }) {
   const [showSearch, setShowSearch] = React.useState(false);
 
   // let content;
@@ -25,8 +24,9 @@ export default function Header() {
 
   return (
     <AppBar active={showSearch}>
-      {!showSearch && <Logo text="BETTER BINGEN" />}
-      {showSearch && <Search />}
+      {showSearch && (
+        <Search value={searchValue} onChange={onSearchValueChange} />
+      )}
       {/* oder */}
       {/* {!showSearch ? <Logo text="BETTER BINGEN" /> : <Search />} */}
       <Button active={showSearch} onClick={() => setShowSearch(!showSearch)} />

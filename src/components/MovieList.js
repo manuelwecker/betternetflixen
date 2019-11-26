@@ -1,7 +1,7 @@
 import React from "react";
 import { searchMovies } from "../api/movies";
 
-export function MovieList({ searchValue }) {
+export default function MovieList({ searchValue }) {
   const [movies, setMovies] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -11,14 +11,12 @@ export function MovieList({ searchValue }) {
     setLoading(true);
     const discoveredMovies = await searchMovies(searchValue);
     setLoading(false);
-    setMovies(discoveredMovies);
+    setMovies(discoveredMovies || []);
   }
-  // Komponente wird aufgerufen einmalig, oder wenn sich die Property des Arrays
+
   React.useEffect(() => {
     refreshMovies();
-  }, []);
-
-  // <button onClick={refreshMovies}></button>
+  }, [searchValue]);
 
   return (
     <div>
