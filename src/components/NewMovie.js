@@ -5,11 +5,11 @@ function NewMovieFunctional() {
   const [genre, setGenre] = React.useState("");
 
   React.useEffect(() => {
-    alert("MOUNTED!!!");
+    // alert("MOUNTED!!!");
   }, []);
 
   React.useEffect(() => {
-    alert("Genre changed!!!", genre);
+    // alert("Genre changed!!!", genre);
   }, [genre]);
 
   function handleSubmit(event) {
@@ -50,11 +50,11 @@ class NewMovie extends React.Component {
   }
 
   componentDidMount() {
-    alert("MOUNTED");
+    // alert("MOUNTED");
   }
 
   componentDidUpdate() {
-    alert("Updated");
+    // alert("Updated");
   }
 
   handleGenreChange(event) {
